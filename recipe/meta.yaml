@@ -10,7 +10,7 @@ source:
   sha256: 128fac03baf2ffd85728b89c49f8f2e68f5bade86a591550c471290e861c001a
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   skip:  # [py<37]
 
@@ -24,6 +24,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - cmake
         - make
         - ninja
@@ -44,6 +45,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - cmake
         - make
         - pkg-config
